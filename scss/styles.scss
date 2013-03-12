@@ -737,7 +737,31 @@ tbody tr:hover th {
         }
     }
 
+        nav.main {
+            position: absolute;
+            right: 10px;
+            top: 10px;
 
+            ul {
+                width:auto;
+                margin:0 auto;
+                text-align:center;
+            }
+
+            li {
+                display:inline;
+                width: auto;
+                list-style:none;
+                background-color: transparent !important;
+
+                a {
+                    display:inline-block;
+                    padding:5px 10px;
+                    font-weight:bold;
+                    text-decoration:none;
+                }
+            }
+        }
 
     section.main_content {
         padding:0 10px;
@@ -768,80 +792,12 @@ footer.main {
     clear:both;
 }
 
-    nav.main {
-        ul {
-            width: 100%;
-            margin: 0 auto;
-            padding: 0;
-            text-align: center;
-        }
 
-        li {
-            float: left;
-            width: 33%;
-            margin:0;
-            list-style: none;
-            background-color:$green;
-
-            &:nth-child(2) {
-                background-color: darken($green,5%);
-            }
-
-            &:nth-child(3) {
-                background-color: darken($green,10%);
-            }
-
-            &:nth-child(4) {
-                background-color: darken($green,15%);
-            }
-
-            &:nth-child(5) {
-                background-color: darken($green,20%);
-            }
-
-            &:nth-child(6) {
-                background-color: darken($green,25%);
-            }
-
-            a {
-                display: block;
-                padding: 15px 0;
-                font-weight: bold;
-                text-decoration: none;
-                color: white;
-            }
-        }
-    }
 
 /* MEDIA QUERIES */
 
 @media only screen and (min-width:48em) {   /*768px*/
-    nav.main {
-        position: absolute;
-        right: 10px;
-        top: 10px;
 
-        ul {
-            width:auto;
-            margin:0 auto;
-            text-align:center;
-        }
-
-        li {
-            display:inline;
-            width: auto;
-            list-style:none;
-            background-color: transparent !important;
-
-            a {
-                display:inline-block;
-                padding:5px 10px;
-                font-weight:bold;
-                text-decoration:none;
-                color: $linkcolor;
-            }
-        }
-    }
 }
 
 @media only screen and (min-width:54em) {   /*864px*/

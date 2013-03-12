@@ -164,3 +164,4 @@ pip-log.txt
 .DS_Store
 
 .docx
+.sass-cache/

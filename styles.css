@@ -523,18 +523,36 @@ header.main {
     max-width: 400px;
     margin: 10px; }
 
-nav.main ul {
-  width: auto;
-  margin: 0 auto;
-  text-align: center; }
-nav.main li {
-  display: inline;
-  list-style: none; }
-  nav.main li a {
-    display: inline-block;
-    padding: 5px 10px;
-    font-weight: bold;
-    text-decoration: none; }
+#nav_link {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 21px;
+  height: 21px;
+  background: url(rs/nav_icon.png) no-repeat 50% 50%; }
+
+nav.main {
+  margin: 3em 0 0 0; }
+  nav.main ul {
+    width: auto;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    background-color: #967229; }
+  nav.main li {
+    list-style: none; }
+    nav.main li a {
+      display: block;
+      padding: 25px 0;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+      border-bottom: 1px solid white;
+      font-size: 1.5em; }
+      nav.main li a:hover {
+        background-color: #8e6c27; }
+      nav.main li a:active {
+        background-color: #6e531e; }
 
 section.main_content {
   padding: 0 10px; }
@@ -556,10 +574,204 @@ footer.main {
   padding: 3em;
   clear: both; }
 
+.flex_wrapper {
+  display: -webkit-box;
+  /* Old: iOS <6, Safari 3.1-6 */
+  display: -moz-box;
+  /* Old: Firefox <19 (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* IE 10 */
+  display: -webkit-flex;
+  /* UTD - Chrome */
+  display: flex;
+  /* UTD, Spec - Opera 12.1, Firefox >20 */
+  -webkit-box-orient: vertical;
+  /* vertical, horizontal */
+  box-orient: vertical;
+  /* vertical, horizontal */
+  -ms-flex-direction: column;
+  /* row, column, row-reverse, column-reverse, inherit: IE 10 */
+  -webkit-flex-direction: column;
+  /* row, column, row-reverse, column-reverse, inherit: UTD - Chrome */
+  flex-direction: column;
+  /* row, column, row-reverse, column-reverse, inherit: UTD, Spec - Opera 12.1, Firefox >20 */ }
+
+.flex {
+  width: 100%; }
+
+nav.main {
+  -webkit-box-ordinal-group: 3;
+  /* Old: iOS <6, Safari 3.1-6 */
+  -moz-box-ordinal-group: 3;
+  /* Old: Firefox <19 */
+  -ms-flex-order: 3;
+  /* IE 10 */
+  -webkit-order: 3;
+  /* UTD - Chrome */
+  order: 3;
+  /* UTD, Spec - Opera 12.1, Firefox >20 */ }
+
+.main_content {
+  -webkit-box-ordinal-group: 1;
+  /* Old: iOS <6, Safari 3.1-6 */
+  -moz-box-ordinal-group: 1;
+  /* Old: Firefox <19 */
+  -ms-flex-order: 1;
+  /* IE 10 */
+  -webkit-order: 1;
+  /* UTD - Chrome */
+  order: 1;
+  /* UTD, Spec - Opera 12.1, Firefox >20 */ }
+
+.sidebar {
+  -webkit-box-ordinal-group: 2;
+  /* Old: iOS <6, Safari 3.1-6 */
+  -moz-box-ordinal-group: 2;
+  /* Old: Firefox <19 */
+  -ms-flex-order: 2;
+  /* IE 10 */
+  -webkit-order: 2;
+  /* UTD - Chrome */
+  order: 2;
+  /* UTD, Spec - Opera 12.1, Firefox >20 */ }
+
 /* MEDIA QUERIES */
 @media only screen and (min-width: 48em) {
-  /*768px*/ }
+  /*768px*/
+  #nav_link {
+    display: none; }
+
+  nav.main {
+    margin-top: 0;
+    -webkit-box-ordinal-group: 1;
+    /* Old: iOS <6, Safari 3.1-6 */
+    -moz-box-ordinal-group: 1;
+    /* Old: Firefox <19 */
+    -ms-flex-order: 1;
+    /* IE 10 */
+    -webkit-order: 1;
+    /* UTD - Chrome */
+    order: 1;
+    /* UTD, Spec - Opera 12.1, Firefox >20 */ }
+    nav.main ul {
+      width: auto;
+      margin: 0 auto;
+      padding: 0;
+      text-align: center;
+      background-color: transparent; }
+    nav.main li {
+      display: inline;
+      list-style: none;
+      border-bottom: 0; }
+      nav.main li a {
+        display: inline-block;
+        padding: 5px 10px;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1em;
+        color: #be9034; }
+        nav.main li a:hover, nav.main li a:active {
+          background-color: transparent; }
+
+  .main_content {
+    -webkit-box-ordinal-group: 2;
+    /* Old: iOS <6, Safari 3.1-6 */
+    -moz-box-ordinal-group: 2;
+    /* Old: Firefox <19 */
+    -ms-flex-order: 2;
+    /* IE 10 */
+    -webkit-order: 2;
+    /* UTD - Chrome */
+    order: 2;
+    /* UTD, Spec - Opera 12.1, Firefox >20 */ }
+
+  .sidebar {
+    -webkit-box-ordinal-group: 3;
+    /* Old: iOS <6, Safari 3.1-6 */
+    -moz-box-ordinal-group: 3;
+    /* Old: Firefox <19 */
+    -ms-flex-order: 3;
+    /* IE 10 */
+    -webkit-order: 3;
+    /* UTD - Chrome */
+    order: 3;
+    /* UTD, Spec - Opera 12.1, Firefox >20 */ }
+
+  .sidebar {
+    display: -webkit-box;
+    /* Old: iOS <6, Safari 3.1-6 */
+    display: -moz-box;
+    /* Old: Firefox <19 (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* IE 10 */
+    display: -webkit-flex;
+    /* UTD - Chrome */
+    display: flex;
+    /* UTD, Spec - Opera 12.1, Firefox >20 */ }
+    .sidebar article {
+      width: 33.3333333333333333333333%; } }
 @media only screen and (min-width: 54em) {
-  /*864px*/ }
+  /*864px*/
+  .flex_wrapper {
+    -webkit-box-lines: "multiple";
+    /* single, multiple: Old: iOS <6, Safari 3.1-6 */
+    -moz-box-lines: "multiple";
+    /* single, multiple: Old: Firefox < 19 */
+    -ms-flex-flow: row wrap;
+    /* flex-direction flex-wrap: IE 10 */
+    -webkit-flex-flow: row wrap;
+    /* flex-direction flex-wrap: UTD - Chrome */
+    flex-flow: row wrap;
+    /* flex-direction flex-wrap: UTD - Firefox >20 */ }
+
+  nav.main {
+    width: 100%; }
+
+  .main_content {
+    width: 66.666666666667%; }
+
+  .sidebar {
+    width: 33.3333333333333%; }
+
+  .sidebar {
+    -webkit-box-lines: "single";
+    /* single, multiple: Old: iOS <6, Safari 3.1-6 */
+    -moz-box-lines: "single";
+    /* single, multiple: Old: Firefox < 19 */
+    -ms-flex-flow: column wrap;
+    /* flex-direction flex-wrap: IE 10 */
+    -webkit-flex-flow: column wrap;
+    /* flex-direction flex-wrap: UTD - Chrome */
+    flex-flow: column wrap;
+    /* flex-direction flex-wrap: UTD - Firefox >20 */ }
+    .sidebar article {
+      width: 100%; } }
 @media only screen and (min-width: 62em) {
-  /*992px*/ }
+  /*992px*/
+  .flex_wrapper {
+    -webkit-box-lines: "single";
+    /* single, multiple: Old: iOS <6, Safari 3.1-6 */
+    -moz-box-lines: "single";
+    /* single, multiple: Old: Firefox < 19 */
+    -ms-flex-flow: row no-wrap;
+    /* flex-direction flex-wrap: IE 10 */
+    -webkit-flex-flow: row no-wrap;
+    /* flex-direction flex-wrap: UTD - Chrome */
+    flex-flow: row no-wrap;
+    /* flex-direction flex-wrap: UTD - Firefox >20 */ }
+
+  nav.main {
+    width: 200px; }
+    nav.main ul {
+      text-align: left; }
+    nav.main li,
+    nav.main a {
+      display: block; }
+
+  .main_content {
+    width: -moz-calc(80% - 200px);
+    width: -webkit-calc(80% - 200px);
+    width: calc(80% - 200px); }
+
+  .sidebar {
+    width: 20%; } }

@@ -2,7 +2,7 @@
   ---- ---- ---- ---- VARIABLES ---- ---- ---- ----
 */
 // Site Colors
-$green: rgb(102,122,97); //#667a61
+$green: #be9034;
 
 // Greys
 $black: rgb(0,0,0); //#000000
@@ -31,7 +31,7 @@ $headingcolor: $textcolor;
 $codefont: PT Mono, Monaco, Courier New, monospace;
 
 // Links
-$linkcolor: #be9034;
+$linkcolor: $green;
 $linkhover: darken($linkcolor,7%);
 $linkvisited: darken($linkcolor,14%);
 $linkfocus: darken($linkcolor,21%);
@@ -199,7 +199,43 @@ $tablehover: $lightgrey;
     #{$property}: calc(#{$operation});
 }
 
+// Flexbox mixin
+// @include flex()
+@mixin flex() {
+    display: -webkit-box;      /* Old: iOS <6, Safari 3.1-6 */
+    display: -moz-box;         /* Old: Firefox <19 (buggy but mostly works) */
+    display: -ms-flexbox;      /* IE 10 */
+    display: -webkit-flex;     /* UTD - Chrome */
+    display: flex;             /* UTD, Spec - Opera 12.1, Firefox >20 */
+}
 
+// Order inside the flexbox
+// @include flexbox-order(INT)
+@mixin flexbox-order($order) {
+    -webkit-box-ordinal-group: $order;   /* Old: iOS <6, Safari 3.1-6 */
+    -moz-box-ordinal-group: $order;      /* Old: Firefox <19 */
+    -ms-flex-order: $order;              /* IE 10 */
+    -webkit-order: $order;               /* UTD - Chrome */
+    order: $order;                       /* UTD, Spec - Opera 12.1, Firefox >20 */
+}
+
+// Direction of the flexbox elements
+// @include flexbox-direction(STRING, STRING)
+@mixin flexbox-direction($olddirection, $direction) {
+    -webkit-box-orient: $olddirection;   /* vertical, horizontal */
+    box-orient: $olddirection;           /* vertical, horizontal */
+    -ms-flex-direction: $direction;      /* row, column, row-reverse, column-reverse, inherit: IE 10 */
+    -webkit-flex-direction: $direction;  /* row, column, row-reverse, column-reverse, inherit: UTD - Chrome */
+    flex-direction: $direction;          /* row, column, row-reverse, column-reverse, inherit: UTD, Spec - Opera 12.1, Firefox >20 */
+}
+
+@mixin flexbox-flow($oldflow, $flow) {
+    -webkit-box-lines: $oldflow;           /* single, multiple: Old: iOS <6, Safari 3.1-6 */
+    -moz-box-lines: $oldflow;              /* single, multiple: Old: Firefox < 19 */
+    -ms-flex-flow: #{$flow};               /* flex-direction flex-wrap: IE 10 */
+    -webkit-flex-flow: #{$flow};           /* flex-direction flex-wrap: UTD - Chrome */
+    flex-flow: #{$flow};                   /* flex-direction flex-wrap: UTD - Firefox >20 */
+}
 
 /*
   ---- ---- ---- ---- RESET STYLESHEET ---- ---- ---- ----
@@ -737,22 +773,46 @@ tbody tr:hover th {
         }
     }
 
+        #nav_link {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 21px;
+            height: 21px;
+            background: url(rs/nav_icon.png) no-repeat 50% 50%;
+        }
+
         nav.main {
+            margin: 3em 0 0 0;
+
             ul {
                 width:auto;
                 margin:0 auto;
+                padding: 0;
                 text-align:center;
+                background-color: darken($green, 10%);
             }
 
             li {
-                 display:inline;
                  list-style:none;
 
+
                 a {
-                    display:inline-block;
-                    padding:5px 10px;
+                    display:block;
+                    padding:25px 0;
                     font-weight:bold;
                     text-decoration:none;
+                    color: white;
+                    border-bottom: 1px solid white;
+                    font-size: 1.5em;
+
+                    &:hover {
+                        background-color: darken($green, 12%);
+                    }
+
+                    &:active {
+                        background-color: darken($green, 20%);
+                    }
                 }
             }
         }
@@ -786,17 +846,133 @@ footer.main {
     clear:both;
 }
 
+.flex_wrapper {
+    @include flex();
+    @include flexbox-direction(vertical,column);
+}
+
+    .flex {
+        width: 100%;
+    }
+
+    nav.main {
+        @include flexbox-order(3);
+    }
+
+    .main_content {
+        @include flexbox-order(1);
+    }
+
+    .sidebar {
+        @include flexbox-order(2)
+    }
 
 /* MEDIA QUERIES */
 
 @media only screen and (min-width:48em) {   /*768px*/
+    #nav_link {
+        display: none;
+    }
+
+    nav.main {
+        margin-top: 0;
+        @include flexbox-order(1);
+
+        ul {
+            width:auto;
+            margin:0 auto;
+            padding: 0;
+            text-align:center;
+            background-color: transparent;
+        }
+
+        li {
+            display:inline;
+            list-style:none;
+            border-bottom: 0;
+
+            a {
+                display:inline-block;
+                padding:5px 10px;
+                font-weight:bold;
+                text-decoration:none;
+                font-size: 1em;
+                color: $linkcolor;
+
+                &:hover,
+                &:active {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    .main_content {
+        @include flexbox-order(2);
+    }
+
+    .sidebar {
+        @include flexbox-order(3);
+    }
+
+    .sidebar {
+        @include flex();
+
+        article {
+            width: 33.3333333333333333333333%;
+        }
+    }
 
 }
 
 @media only screen and (min-width:54em) {   /*864px*/
+    .flex_wrapper {
+        @include flexbox-flow('multiple', 'row wrap');
+    }
 
+        nav.main {
+            width: 100%;
+        }
+
+        .main_content {
+            width: 66.666666666667%;
+        }
+
+        .sidebar {
+            width: 33.3333333333333%;
+        }
+
+    .sidebar {
+        @include flexbox-flow('single','column wrap');
+
+        article {
+            width: 100%;
+        }
+    }
 }
 
 @media only screen and (min-width:62em) {   /*992px*/
+    .flex_wrapper {
+        @include flexbox-flow('single', 'row no-wrap');
+    }
 
+        nav.main {
+            width: 200px;
+            ul {
+                text-align: left;
+            }
+
+            li,
+            a {
+                display: block;
+            }
+        }
+
+        .main_content {
+            @include css3-calc('width','80% - 200px');
+        }
+
+        .sidebar {
+            width: 20%
+        }
 }

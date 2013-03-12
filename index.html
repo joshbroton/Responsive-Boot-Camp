@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<!--[if IEMobile 7]><html class="no-js iem7 oldie"><![endif]-->
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="en"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js ie7 oldie" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js ie8 oldie" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+
+	<title>Responsive Design Demo</title>
+	<!-- METADATA -->
+        <meta charset="utf-8">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
+        <meta http-equiv="cleartype" content="on">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+	<link rel="stylesheet" href="styles.css" />
+    
+    <script src="jquery.js"></script>
+    <script src="rwd_scripts.js"></script>
+    
+    <script>
+		$(document).ready(function() {
+			if ($.fn.mobileMenu) {
+				$('#main_nav ul').mobileMenu({
+					switchWidth: 768,                   //width (in px to switch at)
+					topOptionText: 'Main Menu',     //first option text
+					indentString: '&nbsp;&nbsp;&nbsp;'  //string for indenting nested items
+				});
+			}
+		});
+	</script>
+		
+</head>
+<body>
+	<section class="wrapper">
+		<header class="main">
+            <img src="rs/logo.png" />
+            <nav class="main" role="navigation">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">People</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+		</header>
+		<section class="content">
+            <h1>Responsive Design Demo</h1>
+			<section class="main_content" role="main">
+                <img src="rs/allthree.png" />
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed nisl vel ante laoreet interdum. Ut euismod convallis metus sed viverra. Donec mauris tellus, aliquam convallis pharetra at, elementum vel diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean ornare quam sit amet libero pharetra venenatis. Aliquam orci sem, hendrerit eget luctus sit amet, vulputate a massa. Suspendisse potenti. Vivamus facilisis luctus justo, id fringilla dolor lobortis et. Vestibulum orci eros, luctus nec consectetur laoreet, sodales malesuada arcu.</p>
+
+				<p>Quisque vulputate rutrum tellus, vitae bibendum sapien tincidunt non. Vivamus neque quam, varius eu sodales non, varius eu turpis. Nulla tincidunt faucibus est, in condimentum quam commodo in. Morbi ultrices scelerisque auctor. Donec eget augue tortor, ac congue lacus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum elementum, mi et tincidunt bibendum, lacus turpis ornare risus, eget lobortis elit nisl quis arcu. Phasellus tempus turpis nec mi tristique vitae sodales felis consequat. Nulla a massa purus. Sed pharetra, quam nec adipiscing pretium, nulla orci luctus mi, at condimentum purus tortor sed eros. Mauris rhoncus nisl sagittis nunc feugiat posuere elementum neque lacinia. Morbi condimentum, ligula scelerisque molestie tincidunt, dolor tellus gravida nunc, id molestie lacus purus a lorem. Integer id est orci. Etiam a erat dui. Vivamus id nibh sit amet dolor scelerisque porta a et urna.</p>
+			</section>
+			<section class="sidebar" role="complimentary">
+				<article>
+                	<img src="rs/iphone.png" />
+                    <div>
+                        <h3>It works here!</h3>
+                        Nulla a massa purus. Sed pharetra, quam nec adipiscing pretium, nulla orci luctus mi, at condimentum purus tortor sed eros.
+                    </div>
+                </article>
+                <article>
+                	<img src="rs/laptop.png" />
+                    <div>
+                        <h3>And here!</h3>
+                        Mauris rhoncus nisl sagittis nunc feugiat posuere elementum neque lacinia. Morbi condimentum, ligula scelerisque molestie tincidunt.
+                    </div>
+                </article>
+                <article>
+                	<img src="rs/newton.png" />
+                    <div>
+                        <h3>Even here!</h3>
+                        Crume sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum elementum.
+                    </div>
+                </article>
+            </section>
+            <!--<section class="responsive_youtube">
+                    <article class="full">
+                        <iframe src="http://www.youtube.com/embed/FdsummsTeLo" frameborder="0" allowfullscreen></iframe>
+                    </article>
+                Arcu sit augue, integer et, augue integer parturient scelerisque enim sed proin etiam lorem adipiscing nisi porta egestas, ut lacus. Habitasse in pulvinar vel porta vel habitasse parturient, tortor elementum arcu placerat augue augue et proin scelerisque sed amet ac.<br>
+<br>
+Duis? Non massa phasellus integer magna amet, nisi vel tristique, sed. Hac mus porta augue nunc integer, dapibus nec, ultrices dictumst vut in montes platea? Ut sagittis nunc nisi nascetur? Vel, elementum ut pulvinar egestas, tortor placerat est tincidunt.<br>
+<br>
+Turpis dignissim, vel natoque nascetur? Quis lorem porta nisi, nunc enim ridiculus tempor, placerat lacus, ac eu ultrices, pid lundium. Etiam lundium turpis dolor. Diam porta habitasse. Pulvinar est ridiculus integer nec quis, turpis egestas pellentesque sit nec porttitor.
+            </section>
+		</section>-->
+		<footer class="main">
+			&copy;2012 <a href="http://www.joshbroton.com">Josh Broton</a> &#8226; Other Important Stuff<br />
+			<a href="#">Home</a> || <a href="#">About</a> || <a href="#">Services</a> || <a href="#">Products</a> || <a href="#">People</a> || <a href="#">Contact</a>
+		</footer>
+	</section>
+</body>
+</html>

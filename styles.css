@@ -1,0 +1,559 @@
+/*
+  ---- ---- ---- ---- VARIABLES ---- ---- ---- ----
+*/
+/*
+  ---- ---- ---- ---- MIXINS ---- ---- ---- ----
+*/
+/*
+  ---- ---- ---- ---- RESET STYLESHEET ---- ---- ---- ----
+*/
+html, body {
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 100%;
+  line-height: 1.2;
+  font-family: inherit; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block; }
+
+audio[controls], canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/*
+  ---- ---- ---- ---- FONT-FACE DECLARATIONS ---- ---- ---- ----
+*/
+@font-face {
+  font-family: 'museo';
+  src: url("rs/fonts/museo_slab_500-webfont.eot");
+  src: url("rs/fonts/museo_slab_500-webfont.eot?#iefix") format("embedded-opentype"), url("rs/fonts/museo_slab_500-webfont.woff") format("woff"), url("rs/fonts/museo_slab_500-webfont.ttf") format("truetype"), url("rs/fonts/museo_slab_500-webfont.svg#museo_slab_500regular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'PT Mono';
+  src: url("rs/fonts/PTM55FT-webfont.eot");
+  src: url("rs/fonts/PTM55FT-webfont.eot?#iefix") format("embedded-opentype"), url("rs/fonts/PTM55FT-webfont.woff") format("woff"), url("rs/fonts/PTM55FT-webfont.ttf") format("truetype"), url("rs/fonts/PTM55FT-webfont.svg#PTMonoRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'PT Sans';
+  src: url("rs/fonts/PTS55F-webfont.eot");
+  src: url("rs/fonts/PTS55F-webfont.eot?#iefix") format("embedded-opentype"), url("rs/fonts/PTS55F-webfont.woff") format("woff"), url("rs/fonts/PTS55F-webfont.ttf") format("truetype"), url("rs/fonts/PTS55F-webfont.svg#PTSansRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'PT Sans';
+  src: url("fonts/PTS75F-webfont.eot");
+  src: url("fonts/PTS75F-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/PTS75F-webfont.woff") format("woff"), url("fonts/PTS75F-webfont.ttf") format("truetype"), url("fonts/PTS75F-webfont.svg#PTSansBold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+/*
+  ---- ---- ---- ---- ALL VIEWPORTS AND SIZES ---- ---- ---- ----
+*/
+/* BODY */
+@-webkit-viewport {
+  width: device-width; }
+
+@-moz-viewport {
+  width: device-width; }
+
+@-ms-viewport {
+  width: device-width; }
+
+@-o-viewport {
+  width: device-width; }
+
+@viewport {
+  width: device-width; }
+
+html {
+  width: 100%;
+  height: 100%;
+  background: white;
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+body {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  font-family: PT Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.2em;
+  color: black; }
+
+.clearfix {
+  *zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    display: table;
+    content: ""; }
+  .clearfix:after {
+    clear: both; }
+
+/* TYPOGRAPHY */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-family: museo, Cambria, Georgia, Times, "Times New Roman", serif;
+  font-weight: normal;
+  color: black;
+  line-height: 1.35em;
+  text-rendering: optimizeLegibility; }
+
+h1,
+.h1 {
+  margin-bottom: 0.6em;
+  font-size: 2.5em; }
+
+h2,
+.h2 {
+  margin-bottom: 0.1em;
+  font-size: 2em; }
+
+h3,
+.h3 {
+  margin-bottom: .125em;
+  font-size: 1.5em; }
+
+h4,
+.h4 {
+  margin-bottom: 0.68571em;
+  font-size: 1.25em; }
+
+h5,
+.h5 {
+  margin-bottom: 0.6em;
+  font-size: 1.125em; }
+
+h6,
+.h6 {
+  margin-bottom: 0.6em;
+  font-size: 1em;
+  font-weight: normal; }
+
+p,
+ol,
+ul,
+dl,
+address {
+  margin-bottom: 1.2em;
+  line-height: 1.44em; }
+
+small {
+  font-size: .875em; }
+
+ul,
+ol {
+  padding: 0 0 0 20px; }
+
+blockquote {
+  margin: 0 20px 1.2em 15px;
+  border-left: 5px solid #bfbfbf;
+  font-family: museo, Cambria, Georgia, Times, "Times New Roman", serif;
+  font-style: italic; }
+
+dl,
+dd {
+  margin-bottom: 1.2em; }
+
+dt {
+  font-weight: bold; }
+
+b,
+strong {
+  font-weight: bold; }
+  b a,
+  strong a {
+    font-weight: bold; }
+
+dfn,
+em {
+  font-style: italic; }
+
+ins {
+  background-color: #e6e6e6;
+  color: red;
+  text-decoration: none; }
+
+mark {
+  background-color: #e6e6e6;
+  color: red;
+  font-style: italic;
+  font-weight: bold; }
+
+pre,
+code,
+kdb,
+samp {
+  padding: 5px;
+  background-color: #e6e6e6;
+  font-family: PT Mono, Monaco, Courier New, monospace;
+  font-size: .875em; }
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+sub,
+sup {
+  position: relative;
+  font-size: .75em;
+  line-height: 0;
+  vertical-align: 1.2em; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* LINKS */
+a {
+  color: #be9034;
+  text-decoration: none;
+  cursor: pointer; }
+  a:hover {
+    color: #a27b2c;
+    text-decoration: underline;
+    border: 0;
+    outline: 0; }
+  a:visited {
+    color: #866625; }
+  a:focus, a:active {
+    color: #6a501d;
+    border: 0;
+    outline: 0; }
+  a img {
+    border: 0;
+    outline: 0; }
+
+strong a {
+  font-weight: bold; }
+
+/* SELECTION */
+::-moz-selection {
+  background-color: gray;
+  color: white;
+  text-shadow: none; }
+
+::selection {
+  background-color: gray;
+  color: white;
+  text-shadow: none; }
+
+/* ELEMENTS */
+hr {
+  display: block;
+  margin: 1em 0;
+  padding: 0;
+  height: 1px;
+  border: 0;
+  background-color: #bfbfbf; }
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic; }
+
+figure {
+  margin-bottom: 1.2em; }
+
+figcaption {
+  display: block;
+  margin: 0 0 1.2em 0;
+  padding: 0;
+  font-weight: normal; }
+
+/* FORMS */
+label {
+  font-size: .875em;
+  color: #404040; }
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="url"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="file"],
+select,
+textarea,
+.textbox {
+  display: block;
+  width: 100%;
+  max-width: 768px;
+  padding: 5px;
+  margin-bottom: 1.2em;
+  background-color: white;
+  border: 1px solid #bfbfbf;
+  color: gray;
+  font-size: .875em; }
+  input[type="text"]:active, input[type="text"]:focus,
+  input[type="date"]:active,
+  input[type="date"]:focus,
+  input[type="time"]:active,
+  input[type="time"]:focus,
+  input[type="datetime"]:active,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:active,
+  input[type="datetime-local"]:focus,
+  input[type="url"]:active,
+  input[type="url"]:focus,
+  input[type="email"]:active,
+  input[type="email"]:focus,
+  input[type="number"]:active,
+  input[type="number"]:focus,
+  input[type="search"]:active,
+  input[type="search"]:focus,
+  input[type="file"]:active,
+  input[type="file"]:focus,
+  select:active,
+  select:focus,
+  textarea:active,
+  textarea:focus,
+  .textbox:active,
+  .textbox:focus {
+    border-color: gray; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin: 3px 0;
+  padding: 0;
+  *width: 13px;
+  *height: 13px; }
+
+button,
+.button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  width: auto;
+  height: auto;
+  padding: .25em .5em;
+  background-color: gray;
+  border: 1px solid #666666;
+  color: white;
+  font-size: .875em;
+  cursor: pointer; }
+
+input[type="hidden"] {
+  display: none; }
+
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+  cursor: not-allowed; }
+
+::-webkit-input-placeholder,
+:-moz-placeholder,
+:-ms-input-placeholder {
+  color: #bfbfbf;
+  font-size: .875em; }
+
+/* BUTTON SIZES */
+.button-xl {
+  padding: .875em 1.75em;
+  font-size: 1.25em;
+  -webkit-border-top-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 6px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box; }
+
+.button-lg {
+  padding: .5em 1em;
+  font-size: 1em;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box; }
+
+.button-med {
+  padding: .375em .75em;
+  font-size: .875em;
+  line-height: 1em;
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box; }
+
+.button-xs {
+  padding: .25em .5em;
+  font-size: .75em;
+  line-height: .875em;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box; }
+
+/* TABLES */
+table {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 0.6em;
+  background-color: transparent;
+  border-spacing: 0; }
+
+th,
+td {
+  padding: 0 .5em;
+  vertical-align: middle;
+  border-top: 1px solid #bfbfbf;
+  line-height: 1.2em;
+  text-align: left;
+  font-size: .875em; }
+
+th {
+  font-weight: bold; }
+
+thead th {
+  vertical-align: bottom; }
+
+thead:first-child tr:first-child th,
+thead:first-child tr-first-child td {
+  border-top: 0; }
+
+tbody tr td,
+tbody tr th {
+  -webkit-transition: background-color 0.25s 0 ease;
+  -moz-transition: background-color 0.25s 0 ease;
+  -ms-transition: background-color 0.25s 0 ease;
+  -o-transition: background-color 0.25s 0 ease;
+  transition: background-color 0.25s 0 ease; }
+
+tbody tr:hover td,
+tbody tr:hover th {
+  background-color: #bfbfbf; }
+
+.table-striped tbody tr:nth-child(odd) td,
+.table-striped tbody tr:nth-child(odd) th {
+  background-color: #e6e6e6; }
+
+/* Page Layout */
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  background-color: white;
+  min-height: 100%;
+  margin: 0 auto; }
+
+header.main {
+  position: relative;
+  margin-bottom: 2em; }
+  header.main img {
+    width: 60%;
+    max-width: 400px;
+    margin: 10px; }
+
+nav.main ul {
+  width: auto;
+  margin: 0 auto;
+  text-align: center; }
+nav.main li {
+  display: inline;
+  list-style: none; }
+  nav.main li a {
+    display: inline-block;
+    padding: 5px 10px;
+    font-weight: bold;
+    text-decoration: none; }
+
+section.main_content {
+  padding: 0 10px; }
+  section.main_content img {
+    width: 100%; }
+
+.sidebar img {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 1em auto;
+  border-bottom: 2px solid #ddd; }
+.sidebar div {
+  padding: 0 10px; }
+
+footer.main {
+  font-size: .75em;
+  text-align: center;
+  padding: 3em;
+  clear: both; }
+
+/* MEDIA QUERIES */

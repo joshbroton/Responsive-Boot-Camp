@@ -23,16 +23,14 @@
     <script src="scripts/jquery.js"></script>
     <script src="scripts/rwd_scripts.js"></script>
     
-   <!-- <script>
-		$(document).ready(function() {
-			if ($.fn.mobileMenu) {
-				$('nav.main ul').mobileMenu({
-					switchWidth: 820,                   //width (in px to switch at)
-					topOptionText: 'Main Menu',         //first option text
-					indentString: '&nbsp;&nbsp;&nbsp;'  //string for indenting nested items
-				});
-			}
-		});
+    <!--<script>
+        function openCloseMenu() {
+            if (!$('nav.main').is(':visible')) {
+                $('nav.main').slideDown(300);
+            } else {
+                $('nav.main').slideUp(300);
+            }
+        }
 	</script>-->
 		
 </head>
@@ -40,6 +38,7 @@
 	<section class="wrapper">
 		<header class="main">
             <img src="rs/logo.png" />
+            <a id="menu_link" onclick="openCloseMenu();"></a>
             <nav class="main" role="navigation">
                 <ul>
                     <li><a href="#">Home</a></li>

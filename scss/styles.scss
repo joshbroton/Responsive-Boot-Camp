@@ -736,27 +736,40 @@ tbody tr:hover th {
             margin:10px;
         }
     }
-
-        nav.main {
+        #menu_link {
             position: absolute;
             right: 10px;
             top: 10px;
+            width: 21px;
+            height: 21px;
+            background: url(rs/nav_icon.png) no-repeat 50% 50%;
+        }
+
+        nav.main {
+            display: none;
+            position: absolute;
+            width: 200px;
+            right: 10px;
+            top: 31px;
+            border: 1px solid $midgrey;
+            background: white;
 
             ul {
                 width:auto;
                 margin:0 auto;
-                text-align:center;
+                padding: 0;
+                text-align:left;
             }
 
             li {
-                display:inline;
+                display:block;
                 width: auto;
                 list-style:none;
                 background-color: transparent !important;
 
                 a {
                     display:inline-block;
-                    padding:5px 10px;
+                    padding:15px 10px;
                     font-weight:bold;
                     text-decoration:none;
                 }
@@ -796,8 +809,35 @@ footer.main {
 
 /* MEDIA QUERIES */
 
-@media only screen and (min-width:48em) {   /*768px*/
+@media only screen and (min-width:50em) {   /*768px*/
+    nav.main {
+        display: block !important;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: auto;
+        border: 0;
 
+        ul {
+            width:auto;
+            margin:0 auto;
+            text-align:center;
+        }
+
+        li {
+            display:inline;
+            width: auto;
+            list-style:none;
+            background-color: transparent !important;
+
+            a {
+                display:inline-block;
+                padding:5px 10px;
+                font-weight:bold;
+                text-decoration:none;
+            }
+        }
+    }
 }
 
 @media only screen and (min-width:54em) {   /*864px*/

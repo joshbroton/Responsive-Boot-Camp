@@ -747,31 +747,26 @@ tbody tr:hover th {
 
         nav.main {
             display: none;
-            position: absolute;
-            width: 200px;
-            right: 10px;
-            top: 31px;
-            border: 1px solid $midgrey;
-            background: white;
+            background: $green;
 
             ul {
-                width:auto;
                 margin:0 auto;
                 padding: 0;
-                text-align:left;
+                text-align:center;
             }
 
             li {
                 display:block;
-                width: auto;
                 list-style:none;
-                background-color: transparent !important;
 
                 a {
-                    display:inline-block;
-                    padding:15px 10px;
+                    display:block;
+                    padding:15px 0;
                     font-weight:bold;
                     text-decoration:none;
+                    border-bottom: 3px solid white;
+                    color: white;
+                    font-size: 1.5em;
                 }
             }
         }
@@ -810,13 +805,17 @@ footer.main {
 /* MEDIA QUERIES */
 
 @media only screen and (min-width:50em) {   /*768px*/
+    #menu_link {
+        display: none;
+    }
+
     nav.main {
         display: block !important;
         position: absolute;
         right: 10px;
         top: 10px;
         width: auto;
-        border: 0;
+        background-color: transparent;
 
         ul {
             width:auto;
@@ -828,13 +827,14 @@ footer.main {
             display:inline;
             width: auto;
             list-style:none;
-            background-color: transparent !important;
 
             a {
                 display:inline-block;
                 padding:5px 10px;
-                font-weight:bold;
                 text-decoration:none;
+                border: 0;
+                color: $linkcolor;
+                font-size: 1em;
             }
         }
     }

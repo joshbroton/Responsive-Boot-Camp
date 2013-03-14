@@ -794,28 +794,28 @@ footer.main {
     clear:both;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-    font-family: glyphs;
-    background: none;
-    width: auto;
-    height: auto;
-    font-style: normal;
-}
+.responsive_youtube {
+    margin-top: 1.5em;
+    padding: 1.5em 10px 0 10px;
+    border-top: 3px solid $midgrey;
 
-#twitterLink {
-    img {
-        vertical-align: top;
+    iframe {
+        width: 100%;
+        height: 500px;
     }
 }
 
-.icon-twitter {
-    padding: 8px;
-    background: black;
-    @include rounded(50%);
-    font-size: 24px;
-    color: white;
-    &:before {
-        content: '\f16a';
-    }
-}
+
 /* MEDIA QUERIES */
+
+@media only screen and (min-width:48em) {
+
+}
+
+@media only screen and (min-width:54em) {
+
+}
+
+@media only screen and (min-width:62em) {
+
+}

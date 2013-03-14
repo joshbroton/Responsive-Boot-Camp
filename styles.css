@@ -564,25 +564,12 @@ footer.main {
   padding: 3em;
   clear: both; }
 
-[class^="icon-"], [class*=" icon-"] {
-  font-family: glyphs;
-  background: none;
-  width: auto;
-  height: auto;
-  font-style: normal; }
-
-#twitterLink img {
-  vertical-align: top; }
-
-.icon-twitter {
-  padding: 8px;
-  background: black;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  font-size: 24px;
-  color: white; }
-  .icon-twitter:before {
-    content: '\f16a'; }
+.responsive_youtube {
+  margin-top: 1.5em;
+  padding: 1.5em 10px 0 10px;
+  border-top: 3px solid gray; }
+  .responsive_youtube iframe {
+    width: 100%;
+    height: 500px; }
 
 /* MEDIA QUERIES */

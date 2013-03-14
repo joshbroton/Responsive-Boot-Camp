@@ -23,23 +23,22 @@
     <script src="scripts/jquery.js"></script>
     <script src="scripts/rwd_scripts.js"></script>
     
-    <!--<script>
+    <script>
         function openCloseMenu() {
-            if (!$('nav.main').is(':visible')) {
-                $('nav.main').slideDown(500);
+            if (!$('nav.mobile').is(':visible')) {
+                $('nav.mobile').slideDown(500);
             } else {
-                $('nav.main').slideUp(500);
+                $('nav.mobile').slideUp(500);
             }
         }
-	</script>-->
+	</script>
 		
 </head>
 <body>
 	<section class="wrapper">
 		<header class="main">
-            <img src="rs/logo.png" />
-            <a id="menu_link" onclick="openCloseMenu();"></a>
-            <nav class="main" role="navigation">
+            <a id="menu_link" onclick="openCloseMenu();">MENU>></a>
+            <nav class="mobile" role="navigation">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
@@ -48,6 +47,10 @@
                     <li><a href="#">People</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
+            </nav>
+            <img src="rs/logo.png" />
+            <nav class="main">
+
             </nav>
 		</header>
 		<section class="content">

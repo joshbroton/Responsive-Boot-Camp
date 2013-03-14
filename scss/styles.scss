@@ -737,15 +737,18 @@ tbody tr:hover th {
         }
     }
         #menu_link {
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            width: 21px;
-            height: 21px;
-            background: url(rs/nav_icon.png) no-repeat 50% 50%;
+            display: block;
+            position: relative;
+            width: 100%;
+            padding: 10px;
+            background-color: $green;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            border-bottom: 3px solid white;
         }
 
-        nav.main {
+        nav.mobile {
             display: none;
             background: $green;
 
@@ -769,6 +772,10 @@ tbody tr:hover th {
                     font-size: 1.5em;
                 }
             }
+        }
+
+        nav.main {
+            display: none;
         }
 
     section.main_content {

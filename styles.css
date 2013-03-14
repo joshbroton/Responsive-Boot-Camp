@@ -524,24 +524,27 @@ header.main {
     margin: 10px; }
 
 #menu_link {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 21px;
-  height: 21px;
-  background: url(rs/nav_icon.png) no-repeat 50% 50%; }
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  background-color: #667a61;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  border-bottom: 3px solid white; }
 
-nav.main {
+nav.mobile {
   display: none;
   background: #667a61; }
-  nav.main ul {
+  nav.mobile ul {
     margin: 0 auto;
     padding: 0;
     text-align: center; }
-  nav.main li {
+  nav.mobile li {
     display: block;
     list-style: none; }
-    nav.main li a {
+    nav.mobile li a {
       display: block;
       padding: 15px 0;
       font-weight: bold;
@@ -549,6 +552,10 @@ nav.main {
       border-bottom: 3px solid white;
       color: white;
       font-size: 1.5em; }
+
+nav.main {
+  display: none;
+  display: none; }
 
 section.main_content {
   padding: 0 10px; }

@@ -278,16 +278,24 @@ audio[controls], canvas, video {
 
 @font-face {
     font-family: 'PT Sans';
-    src: url('fonts/PTS75F-webfont.eot');
-    src: url('fonts/PTS75F-webfont.eot?#iefix') format('embedded-opentype'),
-    url('fonts/PTS75F-webfont.woff') format('woff'),
-    url('fonts/PTS75F-webfont.ttf') format('truetype'),
-    url('fonts/PTS75F-webfont.svg#PTSansBold') format('svg');
+    src: url('rs/fonts/PTS75F-webfont.eot');
+    src: url('rs/fonts/PTS75F-webfont.eot?#iefix') format('embedded-opentype'),
+    url('rs/fonts/PTS75F-webfont.woff') format('woff'),
+    url('rs/fonts/PTS75F-webfont.ttf') format('truetype'),
+    url('rs/fonts/PTS75F-webfont.svg#PTSansBold') format('svg');
     font-weight: bold;
     font-style: normal;
 }
 
-
+@font-face {
+    font-family: 'glyphs';
+    src: url('font-example/font/webhostinghub-glyphs.eot');
+    src: url('font-example/font/webhostinghub-glyphs.eot?#iefix') format('embedded-opentype'),
+    url('font-example/font/webhostinghub-glyphs.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    -moz-font-feature-settings: "calt=0,liga=0";
+}
 
 
 /*
@@ -786,5 +794,12 @@ footer.main {
     clear:both;
 }
 
+[class^="icon-"], [class*=" icon-"] {
+    font-family: glyphs;
+    background:none;width:auto;height:auto;font-style:normal
+}
 
+.icon-zelda:before {
+    content:'\f3b8';
+}
 /* MEDIA QUERIES */

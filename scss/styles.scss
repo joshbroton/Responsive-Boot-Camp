@@ -796,10 +796,26 @@ footer.main {
 
 [class^="icon-"], [class*=" icon-"] {
     font-family: glyphs;
-    background:none;width:auto;height:auto;font-style:normal
+    background: none;
+    width: auto;
+    height: auto;
+    font-style: normal;
 }
 
-.icon-zelda:before {
-    content:'\f3b8';
+#twitterLink {
+    img {
+        vertical-align: top;
+    }
+}
+
+.icon-twitter {
+    padding: 8px;
+    background: black;
+    @include rounded(50%);
+    font-size: 24px;
+    color: white;
+    &:before {
+        content: '\f16a';
+    }
 }
 /* MEDIA QUERIES */
